@@ -1,0 +1,476 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f0f1a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Animasi Latar Belakang */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.purple-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    animation: float 15s infinite ease-in-out;
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(45deg, #8a2be2, #9932cc);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #9932cc, #8b008b);
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 5s;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #8b008b, #4b0082);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(20px, 40px) scale(1.1);
+    }
+    50% {
+        transform: translate(-30px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(10px, -30px) scale(1.05);
+    }
+}
+
+/* Header */
+header {
+    padding: 2rem 0;
+    text-align: center;
+    background: rgba(15, 15, 26, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #8a2be2, #9932cc, #8b008b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 2s ease-in-out infinite alternate;
+    margin-bottom: 1rem;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #8a2be2, 0 0 10px #8a2be2;
+    }
+    to {
+        text-shadow: 0 0 15px #9932cc, 0 0 20px #9932cc, 0 0 25px #8b008b;
+    }
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #b19cd9;
+    margin-bottom: 1.5rem;
+}
+
+/* Container Utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Section Owners */
+.owners-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #b19cd9;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #8a2be2, #9932cc);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.owners-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.owner-card {
+    background: rgba(30, 30, 46, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.owner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+}
+
+.owner-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    border: 3px solid #8a2be2;
+    position: relative;
+    background-image: url('velora.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.owner-avatar::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #8a2be2, #9932cc, #8b008b);
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.owner-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #b19cd9;
+}
+
+.owner-role {
+    font-size: 1rem;
+    color: #8a2be2;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.skills-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #b19cd9;
+}
+
+.skills-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.skill-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skill-item::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: #8a2be2;
+}
+
+/* Section Community */
+.community-section {
+    margin-bottom: 4rem;
+}
+
+.community-container {
+    background: rgba(30, 30, 46, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.community-description {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.community-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.community-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, #8a2be2, #9932cc);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+.community-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.6);
+}
+
+/* Section Games */
+.games-section {
+    margin-bottom: 4rem;
+}
+
+.games-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    background: rgba(30, 30, 46, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+}
+
+.game-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    background-image: url('velora.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.game-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #b19cd9;
+}
+
+.game-description {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.game-link {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(45deg, #8a2be2, #9932cc);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+.game-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.6);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: rgba(15, 15, 26, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(138, 43, 226, 0.2);
+    margin-top: 2rem;
+}
+
+.footer-text {
+    color: #b19cd9;
+    font-size: 0.9rem;
+}
+
+/* Partikel */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(138, 43, 226, 0.6);
+    animation: particleFloat 20s infinite ease-in-out;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(100px, 50px);
+    }
+    50% {
+        transform: translate(-50px, 100px);
+    }
+    75% {
+        transform: translate(50px, -50px);
+    }
+}
+
+/* New Animations for Content */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes staggerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .owners-container, .games-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .owner-card, .game-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .community-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .community-link {
+        width: 200px;
+        text-align: center;
+    }
+}
