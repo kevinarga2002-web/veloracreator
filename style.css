@@ -323,6 +323,10 @@ header {
     background-repeat: no-repeat;
 }
 
+.velora-club .game-image {
+    background-image: url('veloraclub1.gif');
+}
+
 .game-title {
     font-size: 1.3rem;
     margin-bottom: 1rem;
